@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/users")
+@RequestMapping("/v1/users")
 @RestController
 public class UserController {
     private final UserService userService;
