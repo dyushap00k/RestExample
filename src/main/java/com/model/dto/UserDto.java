@@ -1,16 +1,14 @@
 package com.model.dto;
 
-import java.time.LocalDate;
-
 public class UserDto {
     private String name;
     private String surname;
-    private LocalDate dateOfBirthday;
+    private Integer age;
 
-    public UserDto(String name, String surname, LocalDate dateOfBirthday) {
+    public UserDto(String name, String surname, Integer age) {
         this.name = name;
         this.surname = surname;
-        this.dateOfBirthday = dateOfBirthday;
+        this.age = age;
     }
 
     public String getName() {
@@ -28,11 +26,12 @@ public class UserDto {
     public void setSurname(String surname) {
         this.surname = surname;
     }
-    public LocalDate getDateOfBirthday() {
-        return dateOfBirthday;
+
+    public Integer getAge() {
+        return age;
     }
 
-    public void setDateOfBirthday(LocalDate dateOfBirthday) {
-        this.dateOfBirthday = dateOfBirthday;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }
