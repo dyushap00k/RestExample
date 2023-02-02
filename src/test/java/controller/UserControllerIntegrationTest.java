@@ -1,7 +1,7 @@
 package controller;
 
 import com.model.entity.User;
-import com.repo.UserRepository;
+import com.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +30,12 @@ public class UserControllerIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
-    private UserRepository userRepository;
+    private UserService userService;
 
     @Test
     public void gettingUser_whenGetUserById_ThenStatus200() throws Exception {
 
-        when(userRepository.findById(anyLong())).thenReturn(Optional.of(
+        when(userService.getUserById(anyLong())).thenReturn(Optional.of(
                 new User("Билли", "Бонс", LocalDate.of(1994, 2, 19))
         ));
 
