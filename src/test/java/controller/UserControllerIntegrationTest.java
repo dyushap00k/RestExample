@@ -45,4 +45,10 @@ public class UserControllerIntegrationTest {
                 .andExpect(jsonPath("$.surname", equalTo("Бонс")))
                 .andExpect(jsonPath("$.age", equalTo(28)));
     }
+
+    @Test
+    public void gettingNonExistentUser_whenGetUserByNonExistId_ThenStatus400() throws Exception {
+        mockMvc.perform(get("/v1/users/1"))
+                .andExpect(status().isNotFound());
+    }
 }
